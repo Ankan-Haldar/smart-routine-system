@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="main-wrapper">
+
+<!-- SYSTEM TITLE CARD -->
+<div class="card header-card">
+
+<h1>📅 Routine Optimization System</h1>
+
+<p class="subtitle">
+Generate and manage MCA class routines automatically
+</p>
+
+<div class="generate-box">
+
+<form method="POST" action="{{ url_for('main.generate') }}">
+<button class="btn-main">
+Generate Main Routine
+</button>
+</form>
+
+
+<a href="/add_subject" class="btn-secondary">
+Add Subjects
+</a>
+
+</div>
+
+</div>
+
+
+<!-- SECTION ROUTINE CARD -->
+<div class="card">
+
+<h2>View Section Routines</h2>
+
+<p class="subtitle">
+View generated timetable for each section
+</p>
+
+<div class="buttons">
+
+<a href="{{ url_for('main.view') }}">
+📊 All Sections
+</a>
+
+{% set sections = ['A','B'] %}
+
+<!-- MCA 1 : Semester 1,2 -->
+{% for sem in [1,2] %}
+    {% for s in sections %}
+    <a href="{{ url_for('main.view_section',
+                        year='MCA1',
+                        semester=sem,
+                        section=s) }}">
+        🎓 MCA1 Sem{{ sem }}-{{ s }}
+    </a>
+    {% endfor %}
+{% endfor %}
+
+<!-- MCA 2 : Semester 3,4 -->
+{% for sem in [3,4] %}
+    {% for s in sections %}
+    <a href="{{ url_for('main.view_section',
+                        year='MCA2',
+                        semester=sem,
+                        section=s) }}">
+        🎓 MCA2 Sem{{ sem }}-{{ s }}
+    </a>
+    {% endfor %}
+{% endfor %}
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

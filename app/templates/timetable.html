@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Routine</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+{% set times = ["9-10","10-11","11-12","12-1","1-2"] %}
+{% set days = ["Mon","Tue","Wed","Thu","Fri"] %}
+
+<div class="container">
+
+<h1>{{ title }} Routine</h1>
+
+<a href="/" class="back-link">← Back to Dashboard</a>
+
+<table class="routine">
+
+<tr>
+<th>Day</th>
+
+{% for t in times %}
+
+<th>{{t}}</th>
+{% endfor %}
+
+</tr>
+
+{% for d in days %}
+
+<tr>
+
+<th class="day">{{d}}</th>
+
+{% for p in range(1,6) %}
+
+<td>
+
+{% set found = false %}
+
+{% for row in timetable %}
+{% if row.day==d and row.period==p %}
+
+{% set found = true %}
+
+<div class="slot {{ row.class_type or 'theory' }}">
+<div class="subject">{{row.subject}}</div>
+<div class="class">{{row.year}}-Sem{{row.semester}}-{{row.section}}</div>
+<div class="teacher">{{row.teacher}}</div>
+<div class="room">{{row.room}}</div>
+</div>
+
+{% endif %}
+{% endfor %}
+
+{% if not found %}
+
+<div class="free-slot">FREE</div>
+{% endif %}
+
+</td>
+
+{% endfor %}
+
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

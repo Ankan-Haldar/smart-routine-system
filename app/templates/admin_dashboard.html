@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="main-wrapper">
+
+<h1 class="page-title">Admin Dashboard</h1>
+
+<div class="dashboard-grid">
+
+<a href="/add_subject" class="dashboard-card">
+<div class="card-icon">📘</div>
+<h3>Add Subject</h3>
+<p>Add new subject and teacher</p>
+</a>
+
+<a href="/subjects" class="dashboard-card">
+<div class="card-icon">📚</div>
+<h3>View Subjects</h3>
+<p>Manage subject database</p>
+</a>
+
+<form method="POST" action="/generate" class="dashboard-card">
+
+<button type="submit" class="card-button">
+
+<div class="card-icon">⚙</div>
+
+<h3>Generate Routine</h3>
+
+<p>Create optimized timetable</p>
+
+</button>
+
+</form>
+
+
+<a href="/view" class="dashboard-card">
+<div class="card-icon">📅</div>
+<h3>View Routine</h3>
+<p>Check generated timetable</p>
+</a>
+
+</div>
+
+</div>
+
+{% endblock %}

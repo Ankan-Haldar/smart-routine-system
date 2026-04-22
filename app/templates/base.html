@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Routine Optimization</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <div class="logo">
+        TIU
+    </div>
+
+    <div class="header-title">
+
+        <div class="uni">
+            Techno India University
+        </div>
+
+        <div class="sys">
+            Routine Optimization System
+        </div>
+
+    </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <div class="user">
+
+        {{ session.user }}
+
+        <a href="/logout">Logout</a>
+
+    </div>
+    
+
+</div>
+
+
+
+
+<!-- PAGE LAYOUT -->
+
+<div class="layout">
+
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<a href="/admin">Dashboard</a>
+
+<a href="/add_subject">Add Subject</a>
+
+<a href="/subjects">View Subjects</a>
+
+<form method="POST" action="/generate">
+<button type="submit" class="sidebar-link">
+Generate Routine
+</button>
+</form>
+
+<a href="/view">View Routine</a>
+
+</div>
+<!-- TOGGLE SCRIPT (ADD HERE) -->
+
+
+<!-- CONTENT AREA -->
+
+<div class="content">
+
+{% block content %}
+
+{% endblock %}
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-left">
+<h3>Routine Optimization System</h3>
+<p>Automated timetable generation using Genetic Algorithm.</p>
+</div>
+
+<div class="footer-right">
+<h3>Contact</h3>
+<p>Email: support@tiu.edu</p>
+<p>Phone: +91 XXXXX XXXXX</p>
+<p>Techno India University, West Bengal</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Techno India University
+</div>
+
+</footer>
+<script src="{{ url_for('static', filename='theme.js') }}"></script>
+</body>
+</body>
+</html>

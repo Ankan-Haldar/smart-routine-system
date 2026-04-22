@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+<div class="card">
+
+<h1 class="page-title">Subjects Added by Admin</h1>
+
+<table class="subjects-table">
+
+<thead>
+<tr>
+<th>Year</th>
+<th>Section</th>
+<th>Subject</th>
+<th>Teacher</th>
+<th>Type</th>
+<th>Hours</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% if subjects %}
+
+{% for s in subjects %}
+<tr>
+<td>{{ s.id }}</td>
+<td>{{ s.year }}</td>
+<td>{{ s.section }}</td>
+<td>{{ s.subject_name }}</td>
+<td>{{ s.teacher }}</td>
+<td>{{ s.subject_type }}</td>
+<td>{{ s.hours }}</td>
+
+<td>
+<a href="/edit_subject/{{ s.id }}" class="btn-secondary">Edit</a>
+
+<a href="/delete_subject/{{ s.id }}" class="btn-danger">Delete</a>
+</td>
+</tr>
+{% endfor %}
+
+{% else %}
+<tr>
+<td colspan="7">No subjects added yet</td>
+</tr>
+{% endif %}
+
+</tbody>
+
+</table>
+
+<a href="/admin" class="back-link">← Back to Dashboard</a>
+
+</div>
+</div>
+
+{% endblock %}
