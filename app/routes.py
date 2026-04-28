@@ -6,6 +6,9 @@ import pandas as pd
 from flask import send_file
 from io import BytesIO
 import pandas as pd
+from app.ortools_scheduler import run_ortools
+from app.models import Subject
+
 
 main = Blueprint("main", __name__)
 
@@ -213,3 +216,57 @@ def delete_subject(id):
     return redirect(url_for("main.subjects"))
 
 
+
+
+@main.route("/teacher")
+def teacher_select():
+
+    name = request.args.get("name")
+
+    if not name:
+        return "No teacher selected"
+
+    data = run_ortools()
+
+    teacher_data = [
+        x for x in data
+        if x[6].strip().lower() == name.strip().lower()
+    ]
+
+    return render_template(
+        "teacher_timetable.html",
+        timetable=teacher_data,
+        teacher=name
+    )
+
+
+
+@main.route("/teacher/<name>")
+def teacher_view(name):
+
+    data = run_ortools()
+
+    teacher_data = [
+        x for x in data
+        if x[6].strip().lower() == name.strip().lower()
+    ]
+
+    return render_template(
+        "teacher_timetable.html",
+        timetable=teacher_data,
+        teacher=name
+    )
+
+from app.models import Subject
+
+@main.route("/teachers")
+def teachers():
+
+    subjects = Subject.query.all()
+
+    teacher_list = list(set([s.teacher for s in subjects]))
+
+    return render_template(
+        "teachers.html",
+        teachers=teacher_list
+    )

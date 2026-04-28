@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Teacher Routine</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h2>Teacher: {{ teacher }}</h2>
+
+{% set days = ["Mon","Tue","Wed","Thu","Fri"] %}
+
+<table border="1">
+
+<tr>
+<th>Day</th>
+<th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th>
+</tr>
+
+{% for d in days %}
+<tr>
+<td>{{ d }}</td>
+
+{% for p in range(1,6) %}
+<td>
+
+{% set ns = namespace(found=false) %}
+
+{% for row in timetable %}
+{% if row[0] == d and row[1] == p %}
+
+{{ row[5] }}<br>
+{{ row[2] }}-{{ row[4] }}<br>
+Room: {{ row[8] }}
+
+{% set ns.found = true %}
+
+{% endif %}
+{% endfor %}
+
+{% if not ns.found %}
+FREE
+{% endif %}
+
+</td>
+{% endfor %}
+
+</tr>
+{% endfor %}
+
+</table>
+
+<a href="/teachers" class="back-btn">← Select Teacher</a>
+<a href="/" class="back-btn">🏠 Home</a>
+
+</body>
+</html>
