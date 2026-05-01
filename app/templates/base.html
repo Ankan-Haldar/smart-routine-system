@@ -4,7 +4,7 @@
 
 <title>Routine Optimization</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 
     </div>
 
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <!-- <button class="theme-toggle" onclick="toggleTheme()">🌙</button> -->
 
     <div class="user">
 
@@ -54,19 +54,21 @@
 
 <div class="sidebar">
 
-<a href="/admin">Dashboard</a>
+    <a href="/admin">🏠 Dashboard</a>
 
-<a href="/add_subject">Add Subject</a>
+    <a href="/add_subject">➕ Add Subject</a>
 
-<a href="/subjects">View Subjects</a>
+    <a href="/subjects">📚 View Subjects</a>
 
-<form method="POST" action="/generate">
+    <a href="/view_teachers">👨‍🏫 View Teachers</a>
+
+    <a href="/view">📅 View Routine</a>
+
+<!-- <form method="POST" action="/generate">
 <button type="submit" class="sidebar-link">
 Generate Routine
 </button>
-</form>
-
-<a href="/view">View Routine</a>
+</form> -->
 
 </div>
 <!-- TOGGLE SCRIPT (ADD HERE) -->
@@ -88,30 +90,37 @@ Generate Routine
 
 <!-- FOOTER -->
 
-<footer class="footer">
+<div class="footer">
+  <div class="footer-container">
 
-<div class="footer-container">
+    <div class="footer-left">
+      <h3><i class="bi bi-calendar-check-fill"></i> Routine Optimization System</h3>
+      <p><i class="bi bi-envelope-fill"></i> ankanhaldar@gmail.com</p>
+      <p><i class="bi bi-telephone-fill"></i> +91 XXXXX XXXXX</p>
+      <p><i class="bi bi-geo-alt-fill"></i> Kolkata, India</p>
+    </div>
 
-<div class="footer-left">
-<h3>Routine Optimization System</h3>
-<p>Automated timetable generation using Genetic Algorithm.</p>
+    <div class="footer-right">
+      <h3><i class="bi bi-link-45deg"></i> Quick Links</h3>
+      <p><a href="admin_dashboard.html"><i class="bi bi-house-door-fill"></i> Dashboard</a></p>
+      <p><a href="#"><i class="bi bi-person-fill"></i> Faculty</a></p>
+      <p><a href="#"><i class="bi bi-table"></i> Timetable</a></p>
+      <p><a href="#"><i class="bi bi-gear-fill"></i> Settings</a></p>
+
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-github"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Routine Optimization System | All Rights Reserved
+  </div>
 </div>
-
-<div class="footer-right">
-<h3>Contact</h3>
-<p>Email: support@tiu.edu</p>
-<p>Phone: +91 XXXXX XXXXX</p>
-<p>Techno India University, West Bengal</p>
-</div>
-
-</div>
-
-<div class="footer-bottom">
-© 2026 Techno India University
-</div>
-
-</footer>
 <script src="{{ url_for('static', filename='theme.js') }}"></script>
+
 </body>
 </body>
 </html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Teachers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='teacher_view_style.css') }}">
+</head>
+
+<body>
+
+<h2 class="title">👨‍🏫 Teachers ({{ total }})</h2>
+
+<!-- 🔍 SEARCH -->
+<input type="text" id="searchInput" placeholder="Search teacher...">
+
+<!-- 🎯 FILTER -->
+<select id="filterSelect">
+    <option value="all">All</option>
+    <option value="low">Low Load (1-2)</option>
+    <option value="medium">Medium (3-4)</option>
+    <option value="high">High (5+)</option>
+</select>
+
+<div class="teacher-container" id="teacherContainer">
+
+    {% for name, count in teachers.items() %}
+    <div class="teacher-card"
+         data-name="{{ name }}"
+         data-count="{{ count }}">
+
+        <h3>{{ name }}</h3>
+        <p>📚 {{ count }} subjects</p>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+<script>
+
+const searchInput = document.getElementById("searchInput");
+const filterSelect = document.getElementById("filterSelect");
+const cards = document.querySelectorAll(".teacher-card");
+
+function filterTeachers() {
+    const search = searchInput.value.toLowerCase();
+    const filter = filterSelect.value;
+
+    cards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const count = parseInt(card.dataset.count);
+
+        let matchSearch = name.includes(search);
+        let matchFilter = true;
+
+        if (filter === "low") matchFilter = count <= 2;
+        else if (filter === "medium") matchFilter = count >= 3 && count <= 4;
+        else if (filter === "high") matchFilter = count >= 5;
+
+        card.style.display = (matchSearch && matchFilter) ? "block" : "none";
+    });
+}
+
+searchInput.addEventListener("keyup", filterTeachers);
+filterSelect.addEventListener("change", filterTeachers);
+
+</script>
+
+</body>
+</html>

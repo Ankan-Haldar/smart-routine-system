@@ -1,28 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Select Teacher</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% extends "base.html" %}
 
-<body>
+{% block title %}Select Teacher{% endblock %}
 
-<h2>Select Teacher</h2>
+{% block content %}
 
-<form action="/teacher" method="get">
+<div class="teacher-container">
 
-<select name="name" required>
-    <option value="">-- Select Teacher --</option>
+    <div class="teacher-card">
+        <h2>👨‍🏫 Select Teacher</h2>
 
-    {% for t in teachers %}
-    <option value="{{ t }}">{{ t }}</option>
-    {% endfor %}
+        <form action="/teacher" method="get">
 
-</select>
+            <select name="name" required>
+                <option value="">-- Select Teacher --</option>
 
-<button type="submit">View Routine</button>
+                {% for t in teachers %}
+                <option value="{{ t }}">{{ t }}</option>
+                {% endfor %}
 
-</form>
+            </select>
 
-</body>
-</html>
+            <button type="submit">View Routine</button>
+
+        </form>
+
+        <a href="/" class="back-btn">🏠 Back to Home</a>
+
+    </div>
+
+</div>
+
+{% endblock %}

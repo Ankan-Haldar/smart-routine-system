@@ -1,0 +1,69 @@
+/* TITLE */
+.title {
+    text-align: center;
+    margin: 20px;
+    font-size: 28px;
+}
+
+/* SEARCH + FILTER */
+#searchInput, #filterSelect {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 250px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* GRID */
+.teacher-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* CARD */
+.teacher-card {
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    color: white;
+}
+
+/* 🎨 COLOR-CODED WORKLOAD */
+.teacher-card[data-count="1"],
+.teacher-card[data-count="2"] {
+    background: #22c55e; /* green */
+}
+
+.teacher-card[data-count="3"],
+.teacher-card[data-count="4"] {
+    background: #facc15; /* yellow */
+    color: black;
+}
+
+.teacher-card[data-count="5"],
+.teacher-card[data-count="6"],
+.teacher-card[data-count="7"],
+.teacher-card[data-count="8"] {
+    background: #ef4444; /* red */
+}
+
+/* HOVER */
+.teacher-card:hover {
+    transform: scale(1.05);
+}
+
+/* TEXT */
+.teacher-card h3 {
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.teacher-card p {
+    font-size: 14px;
+    opacity: 0.9;
+}

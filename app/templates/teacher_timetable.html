@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Teacher Routine</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% extends "base.html" %}
 
-<body>
+{% block title %}Teacher Routine{% endblock %}
+
+{% block content %}
 
 <h2>Teacher: {{ teacher }}</h2>
 
@@ -51,8 +48,9 @@ FREE
 
 </table>
 
+<br>
+
 <a href="/teachers" class="back-btn">← Select Teacher</a>
 <a href="/" class="back-btn">🏠 Home</a>
 
-</body>
-</html>
+{% endblock %}

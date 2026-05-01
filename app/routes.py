@@ -270,3 +270,20 @@ def teachers():
         "teachers.html",
         teachers=teacher_list
     )
+@main.route("/view_teachers")
+def view_teachers():
+    from app.models import Subject
+
+    teachers = {}
+
+    for s in Subject.query.all():
+        if s.teacher:   
+            teachers[s.teacher] = teachers.get(s.teacher, 0) + 1
+
+    total = len(teachers)   
+
+    return render_template(
+        "view_teachers.html",
+        teachers=teachers,
+        total=total
+    )

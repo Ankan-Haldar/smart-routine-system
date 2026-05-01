@@ -3,7 +3,7 @@
 body{
 margin:0;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background: linear-gradient(135deg,#0f172a,#1e293b,#020617);
+background: linear-gradient(135deg,#2d63ba,#75a248,#993b3b);
 color:#e2e8f0;
 display:flex;
 flex-direction:column;
@@ -16,7 +16,9 @@ margin-top:-10px;
 margin-bottom:25px;
 font-size:15px;
 }
-
+* {
+    transition: all 0.3s ease-in-out;
+}
 
 /* ---------------- HEADER ---------------- */
 
@@ -40,7 +42,7 @@ border-bottom:1px solid rgba(255,255,255,0.05);
 .logo{
 width:45px;
 height:45px;
-background:#e63946;
+background:#fc061a;
 border-radius:50%;
 display:flex;
 align-items:center;
@@ -119,7 +121,7 @@ display:block;
 padding:14px 20px;
 background:none;
 border:none;
-color:#cfd8dc;
+color:#ffffff;
 text-align:left;
 font-size:15px;
 cursor:pointer;
@@ -169,6 +171,7 @@ box-shadow:0 15px 40px rgba(0,0,0,0.5);
 border:1px solid rgba(255,255,255,0.05);
 max-width:900px;
 margin:auto;
+
 }
 
 .header-card{
@@ -409,30 +412,117 @@ color:#999;
 
 /* ---------------- FOOTER ---------------- */
 
-.footer{
-background:#0f172a;
-color:#ddd;
-padding:40px 0 10px;
-margin-top:60px;
+.footer {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e2e8f0;
+  padding: 50px 20px 20px;
+  margin-top: 60px;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.footer-container{
-display:flex;
-justify-content:space-between;
-padding:0 40px;
+/* Container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap; /* important for responsiveness */
+  max-width: 1200px;
+  margin: auto;
 }
 
+/* Sections */
 .footer-left,
-.footer-right{
-width:45%;
+.footer-right {
+  flex: 1;
+  min-width: 280px;
 }
 
-.footer-bottom{
-text-align:center;
-margin-top:20px;
-padding-top:10px;
-border-top:1px solid rgba(255,255,255,0.1);
-font-size:14px;
+/* Headings */
+.footer h3 {
+  color: #38bdf8;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+/* Text */
+.footer p {
+  line-height: 1.6;
+  font-size: 15px;
+  color: #cbd5f5;
+}
+
+/* Links */
+.footer a {
+  color: #cbd5f5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: #38bdf8;
+  padding-left: 5px;
+}
+
+/* Social icons (optional if you add) */
+.footer .social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  transform: scale(1.2);
+  color: #38bdf8;
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.footer i {
+  margin-right: 8px;
+  color: #38bdf8;
+}
+
+/* Social icons better look */
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 20px;
+  color: #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #38bdf8;
+  transform: translateY(-3px) scale(1.1);
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+  }
+
+  .footer a:hover {
+    padding-left: 0;
+  }
 }
 
 /* ---------- LOGIN WRAPPER ---------- */
@@ -556,49 +646,107 @@ color:#2ecc71;
 
 
 
-:root{
---bg-main:linear-gradient(135deg,#020617,#0f172a);
---text:#e2e8f0;
---card:rgba(255,255,255,0.05);
---sidebar-bg:linear-gradient(180deg,#020617,#0f172a);
---table-bg:white;
---slot-theory:#93c5fd;
---slot-lab:#c4b5fd;
---room-color:#4d023c;
-}
-body.light{
---bg-main:#f1f5f9;
---text:#020617;
---card:white;
---sidebar-bg:#e2e8f0;
---table-bg:white;
---slot-theory:#bfdbfe;
---slot-lab:#ddd6fe;
---room-color:#1e293b;
-}
-
-body{
-background:var(--bg-main);
-color:var(--text);
+/* ---------------- UPDATED COLOR VARIABLES ---------------- */
+:root {
+    /* Main Background: Deep Charcoal to Slate */
+    --bg-main: linear-gradient(135deg, #2b88d4, #06214d);
+    --text: #f1f5f9;
+    --card: rgba(12, 62, 70, 0.7);
+    --sidebar-bg: linear-gradient(135deg, #4e004c, #05255a);
+    
+    /* UI Accents: Cyan & Violet */
+    --accent-primary: #06b6d4; 
+    --accent-secondary: #8b5cf6;
+    --accent-hover: #22d3ee;
+    
+    /* Table & Timetable */
+    --table-bg: #ffffff;
+    --slot-theory: #e0f2fe; /* Soft Sky Blue */
+    --slot-lab: #f5f3ff;    /* Soft Lavender */
+    --room-color: #4338ca;  /* Indigo text */
+    
+    /* Logo / Special */
+    --logo-bg: #8b5cf6;
 }
 
-.card{
-background:var(--card);
+/* ---------------- UPDATED SPECIFIC ELEMENTS ---------------- */
+
+body {
+    background: var(--bg-main);
+    color: var(--text);
 }
 
-.theme-toggle{
-padding:8px 14px;
-border-radius:8px;
-border:none;
-cursor:pointer;
-background:#3b82f6;
-color:white;
+/* Header & Sidebar */
+.header {
+    background: rgba(2, 6, 23, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.sidebar{
-background:var(--sidebar-bg);
+.logo {
+    background: var(--logo-bg) !important;
 }
 
+.sidebar {
+    background: var(--sidebar-bg);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar a.active,
+.sidebar-link.active {
+    background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary)) !important;
+}
+
+/* Cards */
+.card, .dashboard-card {
+    background: var(--card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Buttons */
+.btn-main, .btn-login, .buttons a {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+}
+
+.btn-main:hover, .btn-login:hover {
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent-secondary)) !important;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #64748b, #475569) !important;
+}
+
+/* Timetable / Routine */
+.routine th {
+    background: linear-gradient(135deg, #334155, #0f172a) !important;
+}
+
+.slot.theory {
+    background: var(--slot-theory) !important;
+    border-left: 4px solid var(--accent-primary);
+}
+
+.slot.lab {
+    background: var(--slot-lab) !important;
+    border-left: 4px solid var(--accent-secondary);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(180deg, #0f172a, #020617) !important;
+}
+
+.footer h3, .footer i {
+    color: var(--accent-primary) !important;
+}
+
+/* Auth Pages */
+.login-wrapper, .teacher-container {
+    background: linear-gradient(135deg, #020617, #1e1b4b) !important;
+}
+
+.login-card, .teacher-card {
+    background: rgba(15, 23, 42, 0.8) !important;
+}
 
 
 .back-btn {
@@ -613,4 +761,89 @@ background:var(--sidebar-bg);
 
 .back-btn:hover {
     background-color: #0056b3;
+}
+/* ===== Teacher Page UI ===== */
+.teacher-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0a0f2c, #1a237e);
+}
+
+.teacher-card {
+    background: #11183f;
+    padding: 30px;
+    border-radius: 10px;
+    width: 650px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.teacher-card h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Dropdown */
+.teacher-card select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Button */
+.teacher-card button {
+    width: 100%;
+    padding: 10px;
+    background: #00c6ff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.teacher-card button:hover {
+    background: #0072ff;
+}
+
+/* Back button */
+.back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar a {
+        flex: 1;
+        text-align: center;
+        border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .routine th, .routine td {
+        font-size: 12px;
+        padding: 6px;
+    }
 }
