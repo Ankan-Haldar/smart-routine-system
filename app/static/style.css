@@ -847,3 +847,53 @@ body {
         padding: 6px;
     }
 }
+
+
+
+
+/* ================= MOBILE RESPONSIVE DASHBOARD ================= */
+
+@media (max-width: 768px) {
+
+    .main-wrapper {
+        padding: 15px;
+    }
+
+    .page-title {
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .dashboard-card {
+        padding: 22px;
+        border-radius: 12px;
+    }
+
+    .card-icon {
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+
+    .dashboard-card h3 {
+        font-size: 20px;
+    }
+
+    .dashboard-card p {
+        font-size: 14px;
+    }
+
+    .card-button {
+        width: 100%;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+}
