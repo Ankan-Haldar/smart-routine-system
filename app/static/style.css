@@ -851,7 +851,7 @@ body {
 
 
 
-/* ================= UPDATED MOBILE RESPONSIVE ================= */
+/* ================= FULL MOBILE RESPONSIVE ================= */
 
 @media (max-width: 768px) {
 
@@ -861,105 +861,146 @@ body {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 15px;
+        padding: 9px 10px;        
         text-align: left;
+        gap: 10px;
     }
 
     .header-title {
-        margin-left: 10px;
+        margin-left: 8px;
     }
 
     .uni {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .sys {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .user {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     /* ---------- LAYOUT ---------- */
 
     .layout {
-        flex-direction: row;
-        margin-top: 70px;
+        flex-direction: column;
+        margin-top: 65px;
     }
 
     /* ---------- SIDEBAR ---------- */
 
     .sidebar {
-        width: 170px;
-        min-width: 170px;
-        flex-direction: column;
+        width: 100%;
+        min-width: 100%;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
         padding-top: 0;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+
+    .sidebar::-webkit-scrollbar {
+        display: none;
     }
 
     .sidebar a,
     .sidebar-link {
-        width: 100%;
-        padding: 14px 15px;
-        font-size: 13px;
-        text-align: left;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 120px;
+        padding: 12px 14px;
+        font-size: 12px;
+        text-align: center;
         box-sizing: border-box;
+        border-bottom: none;
     }
 
     /* ---------- CONTENT ---------- */
 
     .content {
-        flex: 1;
-        padding: 12px;
-        width: calc(100% - 170px);
+        width: 100%;
+        padding: 10px;
         box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    /* ---------- MAIN WRAPPER ---------- */
+
+    .main-wrapper {
+        width: 100%;
     }
 
     /* ---------- DASHBOARD ---------- */
 
     .dashboard-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 12px;
     }
 
     .dashboard-card {
         width: 100%;
-        padding: 20px;
+        padding: 16px;
         box-sizing: border-box;
+        border-radius: 14px;
     }
 
     .dashboard-card h3 {
-        font-size: 18px;
+        font-size: 16px;
+        line-height: 1.3;
     }
 
     .dashboard-card p {
-        font-size: 13px;
+        font-size: 12px;
+        line-height: 1.4;
     }
 
     .card-icon {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 8px;
     }
 
     /* ---------- BUTTONS ---------- */
 
     .btn-main,
     .btn-secondary,
-    .btn-login {
+    .btn-login,
+    .card-button {
         width: 100%;
         box-sizing: border-box;
+        font-size: 13px;
+        padding: 12px;
     }
 
     /* ---------- FORMS ---------- */
 
     .form-container {
         height: auto;
-        padding: 15px;
+        padding: 12px;
     }
 
     .form-card {
         width: 100%;
-        padding: 20px;
+        padding: 18px;
         box-sizing: border-box;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .row input,
+    .row select,
+    .row textarea {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 13px;
     }
 
     /* ---------- TABLE ---------- */
@@ -967,6 +1008,7 @@ body {
     .routine,
     .subjects-table {
         display: block;
+        width: 100%;
         overflow-x: auto;
         white-space: nowrap;
     }
@@ -975,8 +1017,21 @@ body {
     .routine td,
     .subjects-table th,
     .subjects-table td {
-        font-size: 11px;
-        padding: 6px;
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    /* ---------- TEACHER PAGE ---------- */
+
+    .teacher-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .teacher-card {
+        width: 100%;
+        padding: 18px;
+        box-sizing: border-box;
     }
 
     /* ---------- FOOTER ---------- */
@@ -984,13 +1039,28 @@ body {
     .footer-container {
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start;
         text-align: left;
-        gap: 20px;
+        gap: 12px;
+        padding: 12px;
     }
 
     .footer-left,
     .footer-right {
         width: 48%;
+        font-size: 11px;
+    }
+
+    /* ---------- PAGE TITLES ---------- */
+
+    h1 {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 20px;
+        line-height: 1.3;
     }
 
 }
