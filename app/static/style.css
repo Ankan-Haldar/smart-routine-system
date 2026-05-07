@@ -851,31 +851,30 @@ body {
 
 
 
-/* ================= FULL MOBILE RESPONSIVE ================= */
+/* ================= UPDATED MOBILE RESPONSIVE ================= */
 
 @media (max-width: 768px) {
 
     /* ---------- HEADER ---------- */
 
     .header {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 12px;
-        gap: 8px;
+        padding: 10px 15px;
+        text-align: left;
     }
 
     .header-title {
-        margin-left: 0;
+        margin-left: 10px;
     }
 
     .uni {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .sys {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .user {
@@ -885,25 +884,24 @@ body {
     /* ---------- LAYOUT ---------- */
 
     .layout {
-        flex-direction: column;
-        margin-top: 120px;
+        flex-direction: row;
+        margin-top: 70px;
     }
 
     /* ---------- SIDEBAR ---------- */
 
     .sidebar {
-        width: 100%;
+        width: 170px;
+        min-width: 170px;
         flex-direction: column;
         padding-top: 0;
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .sidebar a,
     .sidebar-link {
         width: 100%;
-        padding: 14px 18px;
-        font-size: 14px;
+        padding: 14px 15px;
+        font-size: 13px;
         text-align: left;
         box-sizing: border-box;
     }
@@ -911,8 +909,9 @@ body {
     /* ---------- CONTENT ---------- */
 
     .content {
-        padding: 15px;
-        width: 100%;
+        flex: 1;
+        padding: 12px;
+        width: calc(100% - 170px);
         box-sizing: border-box;
     }
 
@@ -920,17 +919,17 @@ body {
 
     .dashboard-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 14px;
     }
 
     .dashboard-card {
         width: 100%;
-        padding: 22px;
+        padding: 20px;
         box-sizing: border-box;
     }
 
     .dashboard-card h3 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .dashboard-card p {
@@ -938,26 +937,7 @@ body {
     }
 
     .card-icon {
-        font-size: 34px;
-    }
-
-    /* ---------- FORMS ---------- */
-
-    .form-container {
-        height: auto;
-        padding: 20px 10px;
-    }
-
-    .form-card {
-        width: 100%;
-        padding: 25px 20px;
-        box-sizing: border-box;
-    }
-
-    .row input,
-    .row select {
-        width: 100%;
-        box-sizing: border-box;
+        font-size: 32px;
     }
 
     /* ---------- BUTTONS ---------- */
@@ -969,25 +949,22 @@ body {
         box-sizing: border-box;
     }
 
-    .buttons {
-        flex-direction: column;
-        width: 100%;
+    /* ---------- FORMS ---------- */
+
+    .form-container {
+        height: auto;
+        padding: 15px;
     }
 
-    .buttons a {
+    .form-card {
         width: 100%;
-        text-align: center;
+        padding: 20px;
         box-sizing: border-box;
     }
 
     /* ---------- TABLE ---------- */
 
-    .routine {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
+    .routine,
     .subjects-table {
         display: block;
         overflow-x: auto;
@@ -998,48 +975,22 @@ body {
     .routine td,
     .subjects-table th,
     .subjects-table td {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    /* ---------- LOGIN ---------- */
-
-    .login-card {
-        width: 95%;
-        padding: 25px;
-        box-sizing: border-box;
-    }
-
-    /* ---------- TEACHER PAGE ---------- */
-
-    .teacher-card {
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
+        font-size: 11px;
+        padding: 6px;
     }
 
     /* ---------- FOOTER ---------- */
 
     .footer-container {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        gap: 20px;
     }
 
     .footer-left,
     .footer-right {
-        width: 100%;
-    }
-
-    /* ---------- PAGE TITLE ---------- */
-
-    h1 {
-        font-size: 28px;
-        text-align: center;
-    }
-
-    h2 {
-        font-size: 22px;
-        text-align: center;
+        width: 48%;
     }
 
 }
