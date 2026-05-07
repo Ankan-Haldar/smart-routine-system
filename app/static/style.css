@@ -851,49 +851,98 @@ body {
 
 
 
-/* ================= MOBILE RESPONSIVE DASHBOARD ================= */
+/* ================= MOBILE RESPONSIVE FIX ================= */
 
 @media (max-width: 768px) {
 
-    .main-wrapper {
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .header-title {
+        margin-left: 0;
+        margin-top: 8px;
+    }
+
+    /* LAYOUT */
+    .layout {
+        flex-direction: column;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-top: 0;
+    }
+
+    .sidebar a,
+    .sidebar-link {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    /* CONTENT */
+    .content {
         padding: 15px;
     }
 
-    .page-title {
-        font-size: 26px;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
+    /* DASHBOARD */
     .dashboard-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 15px;
     }
 
     .dashboard-card {
-        padding: 22px;
-        border-radius: 12px;
-    }
-
-    .card-icon {
-        font-size: 38px;
-        margin-bottom: 10px;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .dashboard-card h3 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .dashboard-card p {
-        font-size: 14px;
+        font-size: 13px;
     }
 
-    .card-button {
+    .card-icon {
+        font-size: 34px;
+    }
+
+    /* FORMS */
+    .form-card {
+        width: 95%;
+        padding: 25px;
+    }
+
+    /* TABLE */
+    .routine {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .subjects-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    /* BUTTONS */
+    .btn-main,
+    .btn-secondary {
         width: 100%;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
+        margin-top: 10px;
     }
 
 }
